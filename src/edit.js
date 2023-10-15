@@ -13,6 +13,14 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps, HeightControl } from '@wordpress/block-editor';
 
+/**
+ * React components provided by Gutenberg to create editor forms
+ * TODO: replace Radio w/ ToggleGroupControl once it's out of Experimental phase
+ * https://github.com/WordPress/gutenberg/tree/trunk/packages/components/src/toggle-group-control/toggle-group-control
+ * 
+ * @see https://wordpress.github.io/gutenberg/?path=/docs/
+ */
+
 import { TextControl, RadioControl } from '@wordpress/components';
 
 /**
@@ -36,8 +44,13 @@ import metadata from './block.json';
  */
 export default function Edit( props ) {
 	const { attributes, setAttributes, } = props;
-	// not sure if I'm supposed to use attributes to manage state; leaving this here in case I'm doing it wrong
-	// const [ serverId, setServerId ] = useState( attributes.discord_server_id );
+
+	/**
+	 * Not sure if I'm supposed to use attributes to manage state; leaving this here in case I'm doing it wrong
+	 * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-attributes/#attribute-source
+	 * @see https://developer.wordpress.org/block-editor/how-to-guides/block-tutorial/introducing-attributes-and-editable-fields/#components-and-the-richtext-component
+	 * const [ serverId, setServerId ] = useState( attributes.discord_server_id ); 
+	 */
 
 	const onChangeServerId = (value) => {
 		// setServerId( value );
