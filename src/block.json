@@ -1,0 +1,50 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clever-kind-co/server-block-discord",
+	"version": "1.0.0",
+	"title": "Server Block for Discord",
+	"category": "widgets",
+	"icon": "smiley",
+	"description": "A Discord server block for the WordPress block editor.",
+	"keywords": [
+		"discord",
+		"server",
+		"discord server"
+	],
+	"attributes": {
+		"discord_server_id": {
+			"type": "string"
+		},
+		"color_mode": {
+			"enum": [ "dark", "light"]
+		},
+		"width": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "iframe",
+			"attribute": "width"
+		},
+		"height":{
+			"type": "string",
+			"source": "attribute",
+			"selector": "iframe",
+			"attribute": "width"
+		}
+	},
+	"example": {
+		"attributes": {
+			"discord_server_id": "689684844623429681",
+			"color_mode": "dark",
+			"width": "500",
+			"height": "300"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "ck-server-block-discord",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
